@@ -1,0 +1,21 @@
+# Dependencies — reinstalled via composer install / npm install
+backend/vendor/
+frontend/node_modules/
+
+# Trained model and dataset — too large for git
+python-service/arsl_model.pkl
+python-service/hand_landmarker.task
+datasets/
+models/
+
+# Kaggle credentials — keep private
+kaggle.json
+
+# Laravel generated files
+backend/.env
+backend/storage/logs/*.log
+backend/bootstrap/cache/*.php
+
+# Python cache
+python-service/__pycache__/
+python-service/*.pyc

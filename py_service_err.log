@@ -1,0 +1,27 @@
+2026-05-03 07:48:10.024918: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-05-03 07:48:13.544707: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+INFO:main:MediaPipe Tasks hand landmarker ready.
+INFO:     Started server process [4272]
+INFO:     Waiting for application startup.
+INFO:main:Loading ASL classifier from HuggingFace (first run ~300 MB)…
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/prithivMLmods/Alphabet-Sign-Language-Detection/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/prithivMLmods/Alphabet-Sign-Language-Detection/84e5004b2603413b02d673faa30874fee132384a/config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/prithivMLmods/Alphabet-Sign-Language-Detection/84e5004b2603413b02d673faa30874fee132384a/config.json "HTTP/1.1 200 OK"
+C:\Users\alame\AppData\Local\Programs\Python\Python313\Lib\site-packages\huggingface_hub\file_download.py:138: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\alame\.cache\huggingface\hub\models--prithivMLmods--Alphabet-Sign-Language-Detection. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/prithivMLmods/Alphabet-Sign-Language-Detection/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/prithivMLmods/Alphabet-Sign-Language-Detection/xet-read-token/84e5004b2603413b02d673faa30874fee132384a "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/210 [00:00<?, ?it/s]Loading weights: 100%|##########| 210/210 [00:00<00:00, 20908.79it/s]
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/prithivMLmods/Alphabet-Sign-Language-Detection/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/prithivMLmods/Alphabet-Sign-Language-Detection/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/prithivMLmods/Alphabet-Sign-Language-Detection/84e5004b2603413b02d673faa30874fee132384a/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/resolve-cache/models/prithivMLmods/Alphabet-Sign-Language-Detection/84e5004b2603413b02d673faa30874fee132384a/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/prithivMLmods/Alphabet-Sign-Language-Detection/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/prithivMLmods/Alphabet-Sign-Language-Detection/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/prithivMLmods/Alphabet-Sign-Language-Detection/84e5004b2603413b02d673faa30874fee132384a/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:main:ASL model ready.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)

@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(php --version)",
+      "Bash(composer --version)",
+      "Bash(npm create *)",
+      "PowerShell(npm *)",
+      "PowerShell(npm create *)",
+      "PowerShell(Get-ChildItem D:\\\\signease\\\\frontend | Where-Object { $_.Name -ne 'node_modules' } | Format-List Name, FullName)",
+      "PowerShell(python -c \"import mediapipe; print\\('mediapipe:', mediapipe.__version__\\)\" 2>&1)",
+      "PowerShell(Start-Sleep 8; Invoke-WebRequest -Uri \"http://localhost:8001/health\" -UseBasicParsing 2>&1 | Select-Object -ExpandProperty Content)",
+      "PowerShell(python -c \"from mediapipe.tasks import python as mp_tasks; from mediapipe.tasks.python import vision as mp_vision; print\\('Tasks API OK'\\)\" 2>&1)",
+      "PowerShell(Get-Process *)",
+      "WebSearch",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:8000/api/history\" -UseBasicParsing | Select-Object -ExpandProperty Content)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:8001/health\" -UseBasicParsing -TimeoutSec 3; $r.Content } catch { \"Not ready yet: $_\" })",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:8001/health\" -UseBasicParsing -TimeoutSec 5; $r.Content } catch { \"Still loading: \" + $_.Exception.Message })",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(Get-NetTCPConnection *)",
+      "PowerShell(Start-Sleep 15; try { $r = Invoke-WebRequest -Uri \"http://localhost:8001/health\" -UseBasicParsing -TimeoutSec 5; $r.Content } catch { \"Not ready: $_\" })",
+      "PowerShell(Start-Process cmd -ArgumentList \"/k cd /d D:\\\\signease\\\\python-service && python -m uvicorn main:app --host 0.0.0.0 --port 8001\" -WindowStyle Normal; Write-Output \"Python window launched\")",
+      "PowerShell(try { Invoke-WebRequest \"http://localhost:8000/api/history\" -UseBasicParsing -TimeoutSec 5 | Select-Object StatusCode, Content } catch { \"Laravel error: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(netstat *)",
+      "PowerShell(Get-WmiObject *)",
+      "PowerShell(Start-Sleep 4; try { Invoke-WebRequest \"http://localhost:8000/api/history\" -UseBasicParsing -TimeoutSec 5 | Select-Object StatusCode, Content } catch { \"Still not ready: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(try { Invoke-WebRequest \"http://127.0.0.1:8000/api/history\" -UseBasicParsing -TimeoutSec 5 | Select-Object StatusCode, Content } catch { \"error: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(curl.exe -s --max-time 5 http://127.0.0.1:8000/api/history 2>&1)",
+      "Bash(Get-ChildItem \"D:\\\\signease\\\\datasets\\\\arsl\" -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object Name, Length, LastWriteTime)",
+      "Bash(Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem \"D:\\\\signease\\\\frontend\\\\src\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName)",
+      "Bash(npm run *)"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+=============================================
+  SIGNEASE — FIRST-TIME SETUP
+=============================================
+
+STEP 1: Install Python deps (if not done)
+─────────────────────────────────────────
+  cd D:\signease\python-service
+  pip install -r requirements.txt
+
+STEP 2: Train the Arabic Sign Language model
+─────────────────────────────────────────────
+The model requires the ArASL dataset from Kaggle (~300 MB download to D:).
+
+  2a. Go to https://www.kaggle.com/settings
+      → API section → "Create New Token"
+      → Download kaggle.json
+
+  2b. Copy kaggle.json to: D:\signease\kaggle.json
+
+  2c. Run the trainer:
+      cd D:\signease\python-service
+      python train.py
+
+  This will:
+  - Download ArASL dataset to D:\signease\datasets\arsl  (never touches C:)
+  - Extract MediaPipe hand landmarks from ~54,000 images
+  - Train a RandomForest classifier (~2-5 minutes)
+  - Save arsl_model.pkl next to main.py
+
+STEP 3: Start everything
+─────────────────────────
+  Double-click D:\signease\start.bat
+
+STEP 4: First account = Admin
+──────────────────────────────
+  Open http://localhost:5173
+  → Click "Register"
+  → The very first account created gets admin role automatically
+  → Admin panel is accessible via the "Admin" button in the header
+
+=============================================
+  CACHE LOCATIONS (all on D:)
+=============================================
+  HuggingFace models:  D:\signease\models\
+  Kaggle credentials:  D:\signease\kaggle.json
+  ArSL dataset:        D:\signease\datasets\arsl\
+  Trained model:       D:\signease\python-service\arsl_model.pkl
+  Hand landmarker:     D:\signease\python-service\hand_landmarker.task
