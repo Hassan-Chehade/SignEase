@@ -17,3 +17,10 @@ backend/bootstrap/cache/*.php
 # Python cache
 python-service/__pycache__/
 python-service/*.pyc
+
+# Log files and temp
+*.log
+progress.txt
+
+# Claude Code config (private)
+.claude/
