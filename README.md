@@ -50,13 +50,6 @@ The Laravel backend runs on PHP.
 - Download: https://getcomposer.org/Composer-Setup.exe
 - Run the installer → it will find your PHP automatically → keep all defaults → Finish
 
-### 6. A Kaggle Account
-The AI model needs a dataset from Kaggle (free to download, ~300 MB).
-- Sign up at: https://www.kaggle.com (free)
-- After signing up, go to: https://www.kaggle.com/settings
-- Scroll to the **"API"** section → click **"Create New Token"**
-- This downloads a file called `kaggle.json` — **keep it, you'll need it later**
-
 ---
 
 ## Step-by-Step Setup
@@ -85,32 +78,7 @@ pip install -r requirements.txt
 
 This will install all the AI/vision libraries. It may take a few minutes.
 
-### Step 3 — Place Your Kaggle API Key
-
-Take the `kaggle.json` file you downloaded earlier and copy it to:
-
-```
-D:\signease\kaggle.json
-```
-
-*(Just drag and drop it there in File Explorer)*
-
-### Step 4 — Train the AI Model
-
-This downloads the Arabic Sign Language dataset (~300 MB) and trains the model. You only do this once.
-
-In Command Prompt:
-
-```
-cd D:\signease\python-service
-python train.py
-```
-
-This will take **2–10 minutes** depending on your PC. When it says "Done" or shows accuracy results, it's finished.
-
-You should now have a file at `D:\signease\python-service\arsl_model.pkl` — that's the trained AI model.
-
-### Step 5 — Set Up the Laravel Backend
+### Step 3 — Set Up the Laravel Backend
 
 In Command Prompt:
 

@@ -30,7 +30,8 @@
       "Bash(Select-Object Name, Length, LastWriteTime)",
       "Bash(Format-Table -AutoSize)",
       "PowerShell(Get-ChildItem \"D:\\\\signease\\\\frontend\\\\src\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(cmd.exe *)"
     ]
   }
 }

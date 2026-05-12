@@ -2,9 +2,7 @@
 backend/vendor/
 frontend/node_modules/
 
-# Trained model and dataset — too large for git
-python-service/arsl_model.pkl
-python-service/hand_landmarker.task
+# Dataset — too large for git (re-downloaded via train.py)
 datasets/
 models/
 
