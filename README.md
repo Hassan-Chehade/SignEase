@@ -26,29 +26,26 @@ Needed to run the React frontend.
 - Download: https://nodejs.org/en/download
 - Click the **"LTS"** version → Windows Installer → run it → keep all defaults → Finish
 
-### 4. PHP 8.2
-The Laravel backend runs on PHP.
-- Download: https://windows.php.net/download/
-- Look for **PHP 8.2** → click the **"VS16 x64 Non Thread Safe"** Zip link
-- Extract the zip to `C:\php`
-- Add `C:\php` to your system PATH:
+### 4. XAMPP
+Gives you PHP and MySQL together — no need to install them separately.
+- Download: https://www.apachefriends.org/download.html
+- Click the **Windows** download for the latest version → run the installer → keep all defaults → Finish
+- After install, add PHP to your system PATH so you can use it in Command Prompt:
   1. Press `Windows + S` → search **"Environment Variables"** → click "Edit the system environment variables"
   2. Click **"Environment Variables..."** at the bottom
   3. Under **"System variables"**, find **"Path"** → click **"Edit"**
-  4. Click **"New"** → type `C:\php` → click OK on all windows
-- Rename `C:\php\php.ini-development` to `C:\php\php.ini`
-- Open `C:\php\php.ini` in Notepad and remove the `;` at the start of these lines:
+  4. Click **"New"** → type `C:\xampp\php` → click OK on all windows
+- Open `C:\xampp\php\php.ini` in Notepad and remove the `;` at the start of these lines:
   ```
   extension=fileinfo
   extension=mbstring
   extension=openssl
-  extension=pdo_sqlite
-  extension=sqlite3
+  extension=pdo_mysql
   ```
 
 ### 5. Composer (PHP package manager)
 - Download: https://getcomposer.org/Composer-Setup.exe
-- Run the installer → it will find your PHP automatically → keep all defaults → Finish
+- Run the installer → when it asks for the PHP path, point it to `C:\xampp\php\php.exe` → keep all other defaults → Finish
 
 ---
 
@@ -80,18 +77,41 @@ This will install all the AI/vision libraries. It may take a few minutes.
 
 ### Step 3 — Set Up the Laravel Backend
 
-In Command Prompt:
+**First, create the database:**
+1. Open XAMPP Control Panel → start **Apache** and **MySQL**
+2. Open your browser and go to `http://localhost/phpmyadmin`
+3. Click **"New"** on the left → type `signease` as the database name → click **"Create"**
+
+**Then open the `.env` file** (at `D:\signease\backend\.env`) in Notepad and find these lines:
+
+```
+DB_CONNECTION=sqlite
+```
+
+Replace them with:
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=signease
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+**Then run these commands** in Command Prompt:
 
 ```
 cd D:\signease\backend
 composer install
 copy .env.example .env
 php artisan key:generate
-type nul > database\database.sqlite
 php artisan migrate
 ```
 
 Run these one at a time, in order. Each one should finish without red error messages.
+
+> **Note:** Make sure XAMPP's Apache and MySQL are running every time you use the app.
 
 ### Step 4 — Set Up the React Frontend
 
@@ -140,7 +160,7 @@ To stop the app, close the 3 terminal windows that `start.bat` opened.
 | Problem | Fix |
 |---|---|
 | `python` is not recognized | Python wasn't added to PATH — reinstall Python and check "Add to PATH" |
-| `php` is not recognized | PHP wasn't added to PATH — see Step 4 in prerequisites above |
+| `php` is not recognized | PHP wasn't added to PATH — see Step 4 (XAMPP) in prerequisites above |
 | `composer` is not recognized | Restart Command Prompt after installing Composer |
 | `npm` is not recognized | Restart Command Prompt after installing Node.js |
 | Camera not working | Make sure your browser has camera permission (check the address bar for a camera icon) |
