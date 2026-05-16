@@ -87,12 +87,13 @@ cd D:\signease\backend
 composer install
 copy .env.example .env
 php artisan key:generate
+type nul > database\database.sqlite
 php artisan migrate
 ```
 
 Run these one at a time, in order. Each one should finish without red error messages.
 
-### Step 6 — Set Up the React Frontend
+### Step 4 — Set Up the React Frontend
 
 In Command Prompt:
 
