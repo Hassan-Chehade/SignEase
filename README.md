@@ -82,24 +82,7 @@ This will install all the AI/vision libraries. It may take a few minutes.
 2. Open your browser and go to `http://localhost/phpmyadmin`
 3. Click **"New"** on the left → type `signease` as the database name → click **"Create"**
 
-**Then open the `.env` file** (at `D:\signease\backend\.env`) in Notepad and find these lines:
-
-```
-DB_CONNECTION=sqlite
-```
-
-Replace them with:
-
-```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=signease
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-**Then run these commands** in Command Prompt:
+**Then run these commands** in Command Prompt, one at a time, in order:
 
 ```
 cd D:\signease\backend
@@ -109,7 +92,7 @@ php artisan key:generate
 php artisan migrate
 ```
 
-Run these one at a time, in order. Each one should finish without red error messages.
+Each one should finish without red error messages.
 
 > **Note:** Make sure XAMPP's Apache and MySQL are running every time you use the app.
 
