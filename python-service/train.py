@@ -26,7 +26,7 @@ log = logging.getLogger(__name__)
 
 # ── Paths ──────────────────────────────────────────────────────────────────
 SCRIPT_DIR   = Path(__file__).parent
-DATASET_DIR  = Path("D:/signease/datasets/arsl")
+DATASET_DIR  = SCRIPT_DIR.parent / "datasets" / "arsl"
 MODEL_OUT    = SCRIPT_DIR / "arsl_model.pkl"
 TASK_FILE    = SCRIPT_DIR / "hand_landmarker.task"
 

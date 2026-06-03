@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 SCRIPT_DIR   = Path(__file__).parent
 TASK_FILE    = SCRIPT_DIR / "hand_landmarker.task"
 CNN_MODEL    = SCRIPT_DIR / "arsl_cnn.pt"
-DATASET_ROOT = Path("D:/signease/datasets/arsl")
+DATASET_ROOT = SCRIPT_DIR.parent / "datasets" / "arsl"
 
 # ── MediaPipe setup ────────────────────────────────────────────────────────
 MEDIAPIPE_AVAILABLE = False
